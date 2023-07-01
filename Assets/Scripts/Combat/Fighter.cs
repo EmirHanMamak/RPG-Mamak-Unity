@@ -11,7 +11,8 @@ public class Fighter : MonoBehaviour
     Transform target;
     void Update()
     {
-        if(target != null && !IsInRange())
+        if(target == null ) return;
+        if(!IsInRange())
         {
         GetComponent<Mover>().MoveTo(target.position);
         }
@@ -28,6 +29,10 @@ public class Fighter : MonoBehaviour
     public void Attack(CombatTarget combatTarget)
     {
         target = combatTarget.transform;
+    }
+    public void Cancel()
+    {
+        target = null;
     }
 }
 }

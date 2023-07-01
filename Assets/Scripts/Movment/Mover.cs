@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using RPG.Combat;
 
 namespace RPG.Movment
 {
     public class Mover : MonoBehaviour
 {
-    [SerializeField] Transform target;
     NavMeshAgent navmeshAgent;
     void Start() 
     {
@@ -18,7 +18,12 @@ namespace RPG.Movment
     {
         UpdateAnimator();
     }
-
+    public void StartMoveAction(Vector3 destination)
+    {
+        GetComponent<Fighter>().Cancel();
+        MoveTo(destination);
+    }
+    
     public void MoveTo(Vector3 destination)
     {
         navmeshAgent.destination = destination;
