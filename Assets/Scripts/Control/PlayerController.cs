@@ -2,7 +2,7 @@ using UnityEngine;
 using RPG.Movment;
 using RPG.Combat;
 using System;
-
+using RPG.Core;
 namespace RPG.Control
 {
     public class PlayerController : MonoBehaviour {
@@ -10,7 +10,7 @@ namespace RPG.Control
         {
             if(InteractWithCombat()) return;
             if(InteractWithMovment()) return;
-            Debug.Log("Nothing to do");
+           // Debug.Log("Nothing to do");
         }
  
         private bool InteractWithCombat()

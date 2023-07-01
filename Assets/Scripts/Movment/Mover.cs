@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using RPG.Combat;
+using RPG.Core;
 
 namespace RPG.Movment
 {
@@ -20,6 +21,7 @@ namespace RPG.Movment
     }
     public void StartMoveAction(Vector3 destination)
     {
+        GetComponent<ActionScheduler>().StartAction(this);
         GetComponent<Fighter>().Cancel();
         MoveTo(destination);
     }

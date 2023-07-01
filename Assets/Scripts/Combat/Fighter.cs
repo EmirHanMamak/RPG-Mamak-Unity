@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using RPG.Movment;
+using RPG.Core;
 
 namespace RPG.Combat
 {
@@ -28,7 +29,9 @@ public class Fighter : MonoBehaviour
     }
     public void Attack(CombatTarget combatTarget)
     {
+        GetComponent<ActionScheduler>().StartAction(this);
         target = combatTarget.transform;
+        Debug.Log("Attack");
     }
     public void Cancel()
     {
