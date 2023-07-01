@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Mover : MonoBehaviour
+namespace RPG.Movment
+{
+    public class Mover : MonoBehaviour
 {
 
     // Update is called once per frame
@@ -24,4 +26,6 @@ public class Mover : MonoBehaviour
         float speed = localvelocity.z;
         GetComponent<Animator>().SetFloat("fowardSpeed",speed);
     }
+}
+
 }
