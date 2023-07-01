@@ -15,7 +15,6 @@ namespace RPG.Control
  
         private bool InteractWithCombat()
         {
-            //14.34
            RaycastHit[] hits = Physics.RaycastAll(GetMouseRay());
            foreach (RaycastHit hit in hits)
            {
