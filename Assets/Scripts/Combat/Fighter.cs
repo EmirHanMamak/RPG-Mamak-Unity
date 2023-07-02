@@ -9,9 +9,13 @@ namespace RPG.Combat
 public class Fighter : MonoBehaviour, IAction
 {
     [SerializeField] float weaponRange = 2f;
+    [SerializeField] float timeBetweenAttacks = 1f;
+        [SerializeField] float weaponDamage = 16f;
+    float timeSinceAttack = 0;
     Transform target;
     void Update()
     {
+        timeSinceAttack += Time.deltaTime;
         if(target == null ) return;
         if(!IsInRange())
         {
@@ -26,7 +30,17 @@ public class Fighter : MonoBehaviour, IAction
 
         private void AttackBehaviour()
         {
+            if(timeSinceAttack > timeBetweenAttacks)
+            {
+                //This is trigger Hit() func
             GetComponent<Animator>().SetTrigger("attack");
+            timeSinceAttack = 0f;
+            }
+        }
+         void Hit()
+        {
+            Health healthComponent = target.GetComponent<Health>();
+            healthComponent.TakeDamage(weaponDamage);
         }
 
         private bool IsInRange()
