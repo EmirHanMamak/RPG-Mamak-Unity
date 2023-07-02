@@ -4,24 +4,23 @@ namespace RPG.Combat
 {
     public class Health : MonoBehaviour
     {
-        [SerializeField] float health = 100f;
+        [SerializeField] float healthPoints = 100f;
+        bool isDead = false;
         public void TakeDamage(float damage)
         {
-            if(health >= damage)
+            healthPoints = Mathf.Max(healthPoints - damage, 0);
+            if(healthPoints == 0)
             {
-                health -= damage;
-                Debug.Log("Yours Health : " + health);
+                Die();
+            }
+            print(healthPoints);
+        }
 
-            }
-            else if(health < damage)
-            {
-                health = 0;
-                Debug.Log("You dead Health : " + health);
-            }
-            else {
-                health = 0;
-                Debug.Log("You dead Health : " + health);
-            }
+        private void Die()
+        {
+            if(isDead) return;
+            isDead = true;
+            GetComponent<Animator>().SetTrigger("die");
         }
     }
 }
