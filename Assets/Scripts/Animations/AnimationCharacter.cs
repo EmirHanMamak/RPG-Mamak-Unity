@@ -11,7 +11,6 @@ public class AnimationCharacter : MonoBehaviour
     }
     public void Hit()
     {
-        
     }
 
     // Update is called once per frame

@@ -18,20 +18,28 @@ public class Fighter : MonoBehaviour, IAction
         GetComponent<Mover>().MoveTo(target.position);
         }
         else
-        {
-            GetComponent<Mover>().Cancel();
+            {
+                GetComponent<Mover>().Cancel();
+                AttackBehaviour();
+            }
         }
-    }
-    private bool IsInRange()
+
+        private void AttackBehaviour()
+        {
+            GetComponent<Animator>().SetTrigger("attack");
+        }
+
+        private bool IsInRange()
     {
         bool isInRange = Vector3.Distance(transform.position, target.position) < weaponRange;
         return isInRange;
     }
     public void Attack(CombatTarget combatTarget)
     {
+
         GetComponent<ActionScheduler>().StartAction(this);
         target = combatTarget.transform;
-        Debug.Log("Attack");
+        Debug.Log("Attacks");
     }
     public void Cancel()
     {
