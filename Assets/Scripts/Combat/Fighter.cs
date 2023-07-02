@@ -35,12 +35,20 @@ public class Fighter : MonoBehaviour, IAction
             if(timeSinceAttack > timeBetweenAttacks)
             {
                 //This is trigger Hit() func
-            GetComponent<Animator>().SetTrigger("attack");
-            timeSinceAttack = 0f;
+                TriggerAttack();
+                timeSinceAttack = 0f;
             }
         }
-         void Hit()
+
+        private void TriggerAttack()
         {
+            GetComponent<Animator>().ResetTrigger("stopAttack");
+            GetComponent<Animator>().SetTrigger("attack");
+        }
+
+        void Hit()
+        {
+            if(target == null) return;
            target.TakeDamage(weaponDamage);
         }
 
@@ -63,10 +71,16 @@ public class Fighter : MonoBehaviour, IAction
         return targetToTest != null && !targetToTest.IsDead();
     }
     public void Cancel()
-    {                
-        GetComponent<Animator>().SetTrigger("stopAttack");                
-        target = null;
+        {
+            StopAttack();
+            target = null;
+        }
+
+        private void StopAttack()
+        {
+            GetComponent<Animator>().ResetTrigger("attack");
+            GetComponent<Animator>().SetTrigger("stopAttack");
+        }
     }
-}
 }
 
