@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using RPG.Core;
-
+using RPG.Combat;
 namespace RPG.Movment
 {
     public class Mover : MonoBehaviour, IAction

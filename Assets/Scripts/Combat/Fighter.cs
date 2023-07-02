@@ -31,6 +31,7 @@ public class Fighter : MonoBehaviour, IAction
 
         private void AttackBehaviour()
         {
+            transform.LookAt(target.transform);
             if(timeSinceAttack > timeBetweenAttacks)
             {
                 //This is trigger Hit() func
