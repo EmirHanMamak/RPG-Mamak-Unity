@@ -10,7 +10,7 @@ public class Fighter : MonoBehaviour, IAction
 {
     [SerializeField] float weaponRange = 2f;
     [SerializeField] float timeBetweenAttacks = 1f;
-        [SerializeField] float weaponDamage = 16f;
+    [SerializeField] float weaponDamage = 16f;
     float timeSinceAttack = 0;
     Transform target;
     void Update()
