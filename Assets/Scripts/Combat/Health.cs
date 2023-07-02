@@ -4,7 +4,7 @@ namespace RPG.Combat
 {
     public class Health : MonoBehaviour
     {
-        [SerializeField] float healthPoints = 100f;
+        [SerializeField] float healthPoints;
         bool isDead = false;
         public void TakeDamage(float damage)
         {
@@ -14,6 +14,10 @@ namespace RPG.Combat
                 Die();
             }
             print(healthPoints);
+        }
+        public bool IsDead()
+        {
+            return isDead;
         }
 
         private void Die()

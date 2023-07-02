@@ -84,11 +84,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1372311369353199132, guid: d054c54d24f5f48408309ad0d297ca14, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1372311369353199132, guid: d054c54d24f5f48408309ad0d297ca14, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.2359247
+      value: 3.92
       objectReference: {fileID: 0}
     - target: {fileID: 1372311369353199132, guid: d054c54d24f5f48408309ad0d297ca14, type: 3}
       propertyPath: m_LocalPosition.y
@@ -96,7 +96,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1372311369353199132, guid: d054c54d24f5f48408309ad0d297ca14, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.094118
+      value: 5.64
       objectReference: {fileID: 0}
     - target: {fileID: 1372311369353199132, guid: d054c54d24f5f48408309ad0d297ca14, type: 3}
       propertyPath: m_LocalRotation.w
@@ -125,6 +125,10 @@ PrefabInstance:
     - target: {fileID: 1372311369353199132, guid: d054c54d24f5f48408309ad0d297ca14, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2889302891026399609, guid: d054c54d24f5f48408309ad0d297ca14, type: 3}
+      propertyPath: weaponDamage
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
