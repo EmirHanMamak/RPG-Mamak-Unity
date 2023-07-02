@@ -56,6 +56,12 @@ public class Fighter : MonoBehaviour, IAction
         target = combatTarget.GetComponent<Health>();
         Debug.Log("Attacks");
     }
+    public bool CanAttack(CombatTarget combatTarget)
+    {
+        if(combatTarget == null) {return false;}
+        Health targetToTest = combatTarget.GetComponent<Health>();
+        return targetToTest != null && !targetToTest.IsDead();
+    }
     public void Cancel()
     {                
         GetComponent<Animator>().SetTrigger("stopAttack");                
