@@ -16,7 +16,10 @@ namespace RPG.Movment
     // Update is called once per frame
     void Update()
     {
-        UpdateAnimator();
+       Vector3 velocity = navmeshAgent.velocity;
+        Vector3 localvelocity = transform.InverseTransformDirection(velocity);
+        float speed = localvelocity.z;
+        GetComponent<Animator>().SetFloat("fowardSpeed",speed);
     }
     public void StartMoveAction(Vector3 destination)
     {
@@ -26,10 +29,11 @@ namespace RPG.Movment
         MoveTo(destination);
     }
     
-    public void MoveTo(Vector3 destination)
+    public bool MoveTo(Vector3 destination)
     {
         navmeshAgent.destination = destination;
         navmeshAgent.isStopped = false;
+        return false;
     }
     
     public void Cancel()
@@ -39,10 +43,7 @@ namespace RPG.Movment
 
     private void UpdateAnimator()
     {
-        Vector3 velocity = navmeshAgent.velocity;
-        Vector3 localvelocity = transform.InverseTransformDirection(velocity);
-        float speed = localvelocity.z;
-        GetComponent<Animator>().SetFloat("fowardSpeed",speed);
+        
     }
 }
 

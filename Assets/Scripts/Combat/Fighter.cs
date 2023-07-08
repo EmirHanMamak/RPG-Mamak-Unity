@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 using RPG.Movment;
 using RPG.Core;
 
@@ -31,7 +32,7 @@ public class Fighter : MonoBehaviour, IAction
 
         private void AttackBehaviour()
         {
-            transform.LookAt(target.transform);
+           transform.LookAt(target.transform);
             if(timeSinceAttack > timeBetweenAttacks)
             {
                 //This is trigger Hit() func
