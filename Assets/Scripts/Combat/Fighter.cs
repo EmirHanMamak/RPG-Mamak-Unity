@@ -58,14 +58,14 @@ public class Fighter : MonoBehaviour, IAction
         bool isInRange = Vector3.Distance(transform.position, target.transform.position) < weaponRange;
         return isInRange;
     }
-    public void Attack(CombatTarget combatTarget)
+    public void Attack(GameObject combatTarget)
     {
 
         GetComponent<ActionScheduler>().StartAction(this);
         target = combatTarget.GetComponent<Health>();
         Debug.Log("Attacks");
     }
-    public bool CanAttack(CombatTarget combatTarget)
+    public bool CanAttack(GameObject combatTarget)
     {
         if(combatTarget == null) {return false;}
         Health targetToTest = combatTarget.GetComponent<Health>();

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using RPG.Combat;
 using UnityEngine;
 
 namespace RPG.Control
@@ -7,18 +8,30 @@ namespace RPG.Control
     public class AIController : MonoBehaviour
     {
         [SerializeField] float chaseDistance = 5f;
+        Fighter fighter;
+        GameObject player;
+        private void Start() {
+            fighter = GetComponent<Fighter>();
+            player = GameObject.FindWithTag("Player");
+        }
         private void Update()
         {
-            if (DistanceToPlayer() < chaseDistance)
+
+            if (InAttackRangeOfPlayer(player) &&
+            fighter.CanAttack(player))
             {
-                print("Yakin");
+                fighter.Attack(player);
+
+            } else 
+            {
+                fighter.Cancel();
             }
         }
 
-        private float DistanceToPlayer()
+        private bool InAttackRangeOfPlayer(GameObject player)
         {
-            GameObject player = GameObject.FindWithTag("Player");
-            return Vector3.Distance(gameObject.transform.position, player.transform.position);
+            float distancetoplayer = Vector3.Distance(gameObject.transform.position, player.transform.position);
+            return distancetoplayer < chaseDistance;
         }
     }
 }

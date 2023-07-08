@@ -130,6 +130,10 @@ PrefabInstance:
       propertyPath: weaponDamage
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 5493529664208652048, guid: d054c54d24f5f48408309ad0d297ca14, type: 3}
+      propertyPath: m_Speed
+      value: 4.3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 3594603006723747208, guid: d054c54d24f5f48408309ad0d297ca14, type: 3}
