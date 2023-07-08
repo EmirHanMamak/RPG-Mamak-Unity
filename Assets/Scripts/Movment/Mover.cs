@@ -9,19 +9,28 @@ namespace RPG.Movment
     public class Mover : MonoBehaviour, IAction
 {
     NavMeshAgent navmeshAgent;
+    Health health;
     void Start() 
     {
+        health = GetComponent<Health>();
         navmeshAgent = GetComponent<NavMeshAgent>();
     }
     // Update is called once per frame
     void Update()
-    {
-       Vector3 velocity = navmeshAgent.velocity;
-        Vector3 localvelocity = transform.InverseTransformDirection(velocity);
-        float speed = localvelocity.z;
-        GetComponent<Animator>().SetFloat("fowardSpeed",speed);
-    }
-    public void StartMoveAction(Vector3 destination)
+        {
+            navmeshAgent.enabled = !health.IsDead();
+            NevMashAnimator();
+        }
+
+        private void NevMashAnimator()
+        {
+            Vector3 velocity = navmeshAgent.velocity;
+            Vector3 localvelocity = transform.InverseTransformDirection(velocity);
+            float speed = localvelocity.z;
+            GetComponent<Animator>().SetFloat("fowardSpeed", speed);
+        }
+
+        public void StartMoveAction(Vector3 destination)
     {
         GetComponent<ActionScheduler>().StartAction(this);
         GetComponent<Animator>().SetTrigger("stopAttack");
