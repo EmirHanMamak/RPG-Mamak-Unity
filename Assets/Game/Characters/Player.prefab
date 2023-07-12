@@ -8,13 +8,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8883993117530951242, guid: d054c54d24f5f48408309ad0d297ca14, type: 3}
+      propertyPath: healthPoints
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 360528309267560998, guid: d054c54d24f5f48408309ad0d297ca14, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 1372311369353199132, guid: d054c54d24f5f48408309ad0d297ca14, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 1372311369353199132, guid: d054c54d24f5f48408309ad0d297ca14, type: 3}
       propertyPath: m_LocalPosition.x
@@ -58,12 +62,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2889302891026399609, guid: d054c54d24f5f48408309ad0d297ca14, type: 3}
       propertyPath: weaponDamage
-      value: 44
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3594603006726906228, guid: d054c54d24f5f48408309ad0d297ca14, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 3f6fc0cf5e5d31c458bc74ede87cb8ae, type: 2}
+    - target: {fileID: 5493529664208652048, guid: d054c54d24f5f48408309ad0d297ca14, type: 3}
+      propertyPath: m_Speed
+      value: 5.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

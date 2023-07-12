@@ -84,7 +84,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1372311369353199132, guid: d054c54d24f5f48408309ad0d297ca14, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 1372311369353199132, guid: d054c54d24f5f48408309ad0d297ca14, type: 3}
       propertyPath: m_LocalPosition.x
@@ -128,7 +128,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2889302891026399609, guid: d054c54d24f5f48408309ad0d297ca14, type: 3}
       propertyPath: weaponDamage
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5493529664208652048, guid: d054c54d24f5f48408309ad0d297ca14, type: 3}
       propertyPath: m_Speed
@@ -226,3 +226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chaseDistance: 5
+  suspictionTime: 5
+  patrolPath: {fileID: 0}
+  wayPointTolerance: 1
+  wayPointDwellTime: 3
