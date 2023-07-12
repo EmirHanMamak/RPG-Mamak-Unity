@@ -21,7 +21,7 @@ public class Fighter : MonoBehaviour, IAction
         if(target.IsDead()) return;
         if(!IsInRange())
         {
-        GetComponent<Mover>().MoveTo(target.transform.position);
+        GetComponent<Mover>().MoveTo(target.transform.position, 1f);
         }
         else
             {

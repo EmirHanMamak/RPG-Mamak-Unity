@@ -351,7 +351,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1405746442650313856, guid: 0d1dc39f7247f8a4f8d0d37727447912, type: 3}
       propertyPath: m_Speed
-      value: 4.7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5527512158915288460, guid: 0d1dc39f7247f8a4f8d0d37727447912, type: 3}
       propertyPath: m_RootOrder
@@ -1704,7 +1704,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1405746442650313856, guid: 0d1dc39f7247f8a4f8d0d37727447912, type: 3}
       propertyPath: m_Speed
-      value: 4.7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5527512158915288460, guid: 0d1dc39f7247f8a4f8d0d37727447912, type: 3}
       propertyPath: m_RootOrder
@@ -1855,7 +1855,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1405746442650313856, guid: 0d1dc39f7247f8a4f8d0d37727447912, type: 3}
       propertyPath: m_Speed
-      value: 5.66
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5527512158915288460, guid: 0d1dc39f7247f8a4f8d0d37727447912, type: 3}
       propertyPath: m_RootOrder
@@ -3536,6 +3536,10 @@ PrefabInstance:
       propertyPath: wayPointTolerance
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1405746442650313856, guid: 0d1dc39f7247f8a4f8d0d37727447912, type: 3}
+      propertyPath: m_Speed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5527512158915288460, guid: 0d1dc39f7247f8a4f8d0d37727447912, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -3695,6 +3699,10 @@ PrefabInstance:
     - target: {fileID: 867256007845641472, guid: 0d1dc39f7247f8a4f8d0d37727447912, type: 3}
       propertyPath: wayPointTolerance
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1405746442650313856, guid: 0d1dc39f7247f8a4f8d0d37727447912, type: 3}
+      propertyPath: m_Speed
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5527512158915288460, guid: 0d1dc39f7247f8a4f8d0d37727447912, type: 3}
       propertyPath: m_RootOrder
@@ -3904,7 +3912,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1405746442650313856, guid: 0d1dc39f7247f8a4f8d0d37727447912, type: 3}
       propertyPath: m_Speed
-      value: 4.7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5527512158915288460, guid: 0d1dc39f7247f8a4f8d0d37727447912, type: 3}
       propertyPath: m_RootOrder
@@ -4239,6 +4247,10 @@ PrefabInstance:
     - target: {fileID: 867256007845641472, guid: 0d1dc39f7247f8a4f8d0d37727447912, type: 3}
       propertyPath: wayPointTolerance
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1405746442650313856, guid: 0d1dc39f7247f8a4f8d0d37727447912, type: 3}
+      propertyPath: m_Speed
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4951529587106433551, guid: 0d1dc39f7247f8a4f8d0d37727447912, type: 3}
       propertyPath: emirCan
@@ -4680,7 +4692,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1405746442650313856, guid: 0d1dc39f7247f8a4f8d0d37727447912, type: 3}
       propertyPath: m_Speed
-      value: 4.7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5527512158915288460, guid: 0d1dc39f7247f8a4f8d0d37727447912, type: 3}
       propertyPath: m_RootOrder
@@ -5082,7 +5094,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1405746442650313856, guid: 0d1dc39f7247f8a4f8d0d37727447912, type: 3}
       propertyPath: m_Speed
-      value: 4.7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5527512158915288460, guid: 0d1dc39f7247f8a4f8d0d37727447912, type: 3}
       propertyPath: m_RootOrder
@@ -5920,7 +5932,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1405746442650313856, guid: 0d1dc39f7247f8a4f8d0d37727447912, type: 3}
       propertyPath: m_Speed
-      value: 4.7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5527512158915288460, guid: 0d1dc39f7247f8a4f8d0d37727447912, type: 3}
       propertyPath: m_RootOrder
@@ -6161,6 +6173,10 @@ PrefabInstance:
     - target: {fileID: 867256007845641472, guid: 0d1dc39f7247f8a4f8d0d37727447912, type: 3}
       propertyPath: wayPointTolerance
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1405746442650313856, guid: 0d1dc39f7247f8a4f8d0d37727447912, type: 3}
+      propertyPath: m_Speed
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4951529587106433551, guid: 0d1dc39f7247f8a4f8d0d37727447912, type: 3}
       propertyPath: emirCan
@@ -6709,6 +6725,10 @@ PrefabInstance:
       propertyPath: wayPointDwellTime
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1405746442650313856, guid: 0d1dc39f7247f8a4f8d0d37727447912, type: 3}
+      propertyPath: m_Speed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4951529587106433551, guid: 0d1dc39f7247f8a4f8d0d37727447912, type: 3}
       propertyPath: emirCan
       value: 0
@@ -7065,7 +7085,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1405746442650313856, guid: 0d1dc39f7247f8a4f8d0d37727447912, type: 3}
       propertyPath: m_Speed
-      value: 4.7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5527512158915288460, guid: 0d1dc39f7247f8a4f8d0d37727447912, type: 3}
       propertyPath: m_RootOrder
@@ -7159,6 +7179,10 @@ PrefabInstance:
     - target: {fileID: 867256007845641472, guid: 0d1dc39f7247f8a4f8d0d37727447912, type: 3}
       propertyPath: wayPointTolerance
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1405746442650313856, guid: 0d1dc39f7247f8a4f8d0d37727447912, type: 3}
+      propertyPath: m_Speed
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5527512158915288460, guid: 0d1dc39f7247f8a4f8d0d37727447912, type: 3}
       propertyPath: m_RootOrder
@@ -7333,7 +7357,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1405746442650313856, guid: 0d1dc39f7247f8a4f8d0d37727447912, type: 3}
       propertyPath: m_Speed
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5527512158915288460, guid: 0d1dc39f7247f8a4f8d0d37727447912, type: 3}
       propertyPath: m_RootOrder
@@ -7863,7 +7887,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1405746442650313856, guid: 0d1dc39f7247f8a4f8d0d37727447912, type: 3}
       propertyPath: m_Speed
-      value: 4.7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4951529587106433551, guid: 0d1dc39f7247f8a4f8d0d37727447912, type: 3}
       propertyPath: emirCan
