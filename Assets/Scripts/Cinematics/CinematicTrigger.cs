@@ -11,6 +11,7 @@ public class CinematicTrigger : MonoBehaviour
 {
     bool isAlreadyTrigger = false;
     [SerializeField] Mover mover;
+
     private void OnTriggerEnter(Collider other) {
         if(!isAlreadyTrigger && other.CompareTag("Player"))
         {
