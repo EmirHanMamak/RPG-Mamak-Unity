@@ -3,49 +3,52 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.AI;
 
-public class Portal : MonoBehaviour
+namespace RPG.SceneManagement
 {
-    enum DestinationIdentifier
+    public class Portal : MonoBehaviour
     {
-		A, B, C, D, E
-    }
-    [SerializeField] int sceneToLoad = -1;
-    [SerializeField] Transform spawnPoint;
-	[SerializeField] DestinationIdentifier destinationIdentifier;
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Player")
+        enum DestinationIdentifier
         {
-            StartCoroutine(Transition());
+            A, B, C, D, E
         }
-    }
-
-    private IEnumerator Transition()
-    {
-        DontDestroyOnLoad(gameObject);
-        yield return SceneManager.LoadSceneAsync(sceneToLoad);
-        Portal otherPortal = GetOtherPortal();
-        UpdatePlayer(otherPortal);
-        Destroy(gameObject);
-    }
-
-    private void UpdatePlayer(Portal otherPortal)
-    {
-        GameObject player = GameObject.FindWithTag("Player");
-        print("logg");
-        player.GetComponent<NavMeshAgent>().Warp(otherPortal.spawnPoint.position);
-        player.transform.rotation = otherPortal.spawnPoint.rotation;
-    }
-
-    private Portal GetOtherPortal()
-    {
-        foreach (Portal portal in FindObjectsOfType<Portal>())
+        [SerializeField] int sceneToLoad = -1;
+        [SerializeField] Transform spawnPoint;
+        [SerializeField] DestinationIdentifier destinationIdentifier;
+        private void OnTriggerEnter(Collider other)
         {
-            if (portal == this) continue;
-			if (portal.destinationIdentifier != destinationIdentifier) continue;
-            return portal;
+            if (other.tag == "Player")
+            {
+                StartCoroutine(Transition());
+            }
         }
 
-        return null;
+        private IEnumerator Transition()
+        {
+            DontDestroyOnLoad(gameObject);
+            yield return SceneManager.LoadSceneAsync(sceneToLoad);
+            Portal otherPortal = GetOtherPortal();
+            UpdatePlayer(otherPortal);
+            Destroy(gameObject);
+        }
+
+        private void UpdatePlayer(Portal otherPortal)
+        {
+            GameObject player = GameObject.FindWithTag("Player");
+            print("logg");
+            player.GetComponent<NavMeshAgent>().Warp(otherPortal.spawnPoint.position);
+            player.transform.rotation = otherPortal.spawnPoint.rotation;
+        }
+
+        private Portal GetOtherPortal()
+        {
+            foreach (Portal portal in FindObjectsOfType<Portal>())
+            {
+                if (portal == this) continue;
+                if (portal.destinationIdentifier != destinationIdentifier) continue;
+                return portal;
+            }
+
+            return null;
+        }
     }
 }
