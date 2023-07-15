@@ -84,7 +84,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1372311369353199132, guid: d054c54d24f5f48408309ad0d297ca14, type: 3}
       propertyPath: m_RootOrder
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1372311369353199132, guid: d054c54d24f5f48408309ad0d297ca14, type: 3}
       propertyPath: m_LocalPosition.x
@@ -150,9 +150,6 @@ PrefabInstance:
       addedObject: {fileID: 4951529587106433551}
     - targetCorrespondingSourceObject: {fileID: 360528309267560998, guid: d054c54d24f5f48408309ad0d297ca14, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -6424612439367643124}
-    - targetCorrespondingSourceObject: {fileID: 360528309267560998, guid: d054c54d24f5f48408309ad0d297ca14, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 867256007845641472}
   m_SourcePrefab: {fileID: 100100000, guid: d054c54d24f5f48408309ad0d297ca14, type: 3}
 --- !u!4 &5527512158915288460 stripped
@@ -200,19 +197,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a58db1e7a02ba74c8c1a3200b226131, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-6424612439367643124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6538695014553737654}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85797f967abd850448c3f894107999d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthPoints: 100
 --- !u!114 &867256007845641472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,3 +214,4 @@ MonoBehaviour:
   patrolPath: {fileID: 0}
   wayPointTolerance: 1
   wayPointDwellTime: 3
+  patrolSpeedFraction: 0.25
