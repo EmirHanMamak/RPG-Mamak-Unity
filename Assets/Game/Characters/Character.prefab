@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2889302891026399609}
   - component: {fileID: 5233334342970905129}
   - component: {fileID: -8883993117530951242}
+  - component: {fileID: 3143180359424508926}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -37,7 +38,7 @@ Transform:
   m_Children:
   - {fileID: 3594603006723990512}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &3456511867919367359
 MeshRenderer:
@@ -115,6 +116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fac8b16b56235546b035731299b5846, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxSpeed: 6
 --- !u!95 &6789924732963147178
 Animator:
   serializedVersion: 5
@@ -176,6 +178,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthPoints: 100
+--- !u!114 &3143180359424508926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 360528309267560998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ea9374b509b70f4bba37e4a2ca8cf00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uniqueIdentifier: 
 --- !u!1001 &3594603006723819242
 PrefabInstance:
   m_ObjectHideFlags: 0
