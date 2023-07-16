@@ -76,6 +76,10 @@ PrefabInstance:
       propertyPath: weaponPrefabs
       value: 
       objectReference: {fileID: 335844130443138963, guid: 8339e499a13b1a3469b024f1b2f0bf21, type: 3}
+    - target: {fileID: 2889302891026399609, guid: d054c54d24f5f48408309ad0d297ca14, type: 3}
+      propertyPath: weaponAnimationOverride
+      value: 
+      objectReference: {fileID: 22100000, guid: c3588619a05b8604691472088497e425, type: 2}
     - target: {fileID: 3143180359424508926, guid: d054c54d24f5f48408309ad0d297ca14, type: 3}
       propertyPath: uniqueIdentifier
       value: player
