@@ -68,6 +68,10 @@ PrefabInstance:
       propertyPath: weaponDamage
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3143180359424508926, guid: d054c54d24f5f48408309ad0d297ca14, type: 3}
+      propertyPath: uniqueIdentifier
+      value: player
+      objectReference: {fileID: 0}
     - target: {fileID: 3594603006726906228, guid: d054c54d24f5f48408309ad0d297ca14, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
