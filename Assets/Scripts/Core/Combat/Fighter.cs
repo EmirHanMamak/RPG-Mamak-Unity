@@ -4,16 +4,31 @@ using UnityEngine;
 
 using RPG.Movment;
 using RPG.Core;
+using System;
 
 namespace RPG.Combat
 {
     public class Fighter : MonoBehaviour, IAction
     {
+        [Header("WEAPON")]
+        [SerializeField] GameObject weaponPrefabs = null;
+        [SerializeField] Transform handTransform = null;
+        [SerializeField] float weaponDamage = 44f;
         [SerializeField] float weaponRange = 2f;
         [SerializeField] float timeBetweenAttacks = 1f;
-        [SerializeField] float weaponDamage = 44f;
+        [Header("OTHERS")]
         float timeSinceAttack = Mathf.Infinity;
         Health target;
+        private void Start()
+        {
+            SpawnWeapon();
+        }
+
+        private void SpawnWeapon()
+        {
+            Instantiate(weaponPrefabs, handTransform);
+        }
+
         void Update()
         {
             timeSinceAttack += Time.deltaTime;
