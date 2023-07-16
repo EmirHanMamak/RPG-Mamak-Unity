@@ -13,9 +13,6 @@ namespace RPG.Combat
         [Header("WEAPON")]
         [SerializeField] Weapon weapon = null;
         [SerializeField] Transform handTransform = null;
-        [SerializeField] float weaponDamage = 44f;
-        [SerializeField] float weaponRange = 2f;
-        [SerializeField] float timeBetweenAttacks = 1f;
         [Header("OTHERS")]
         float timeSinceAttack = Mathf.Infinity;
         Health target;
@@ -26,7 +23,7 @@ namespace RPG.Combat
 
         private void SpawnWeapon()
         {
-            if(weapon == null) return;
+            if (weapon == null) return;
             Animator animator = GetComponent<Animator>();
             weapon.Spawn(handTransform, animator);
         }
@@ -50,7 +47,7 @@ namespace RPG.Combat
         private void AttackBehaviour()
         {
             transform.LookAt(target.transform);
-            if (timeSinceAttack > timeBetweenAttacks)
+            if (timeSinceAttack > weapon.GetTimeBeweenAttack())
             {
                 //This is trigger Hit() func
                 TriggerAttack();
@@ -67,12 +64,12 @@ namespace RPG.Combat
         void Hit()
         {
             if (target == null) return;
-            target.TakeDamage(weaponDamage);
+            target.TakeDamage(weapon.GetWeaponDamage());
         }
 
         private bool IsInRange()
         {
-            bool isInRange = Vector3.Distance(transform.position, target.transform.position) < weaponRange;
+            bool isInRange = Vector3.Distance(transform.position, target.transform.position) < weapon.GetWeaponRange();
             return isInRange;
         }
         public void Attack(GameObject combatTarget)
