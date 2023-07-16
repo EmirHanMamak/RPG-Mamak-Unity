@@ -11,12 +11,11 @@ namespace RPG.Combat
     public class Fighter : MonoBehaviour, IAction
     {
         [Header("WEAPON")]
-        [SerializeField] GameObject weaponPrefabs = null;
+        [SerializeField] Weapon weapon = null;
         [SerializeField] Transform handTransform = null;
         [SerializeField] float weaponDamage = 44f;
         [SerializeField] float weaponRange = 2f;
         [SerializeField] float timeBetweenAttacks = 1f;
-        [SerializeField] AnimatorOverrideController weaponAnimationOverride = null;
         [Header("OTHERS")]
         float timeSinceAttack = Mathf.Infinity;
         Health target;
@@ -27,9 +26,9 @@ namespace RPG.Combat
 
         private void SpawnWeapon()
         {
-            Instantiate(weaponPrefabs, handTransform);
+            if(weapon == null) return;
             Animator animator = GetComponent<Animator>();
-            animator.runtimeAnimatorController = weaponAnimationOverride;
+            weapon.Spawn(handTransform, animator);
         }
 
         void Update()
