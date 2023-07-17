@@ -9,7 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4866362759255569550}
-  - component: {fileID: 4256479085691373895}
+  - component: {fileID: 1986203157523141976}
+  - component: {fileID: 2143281628634908126}
   m_Layer: 0
   m_Name: Sword PickUp
   m_TagString: Untagged
@@ -26,14 +27,35 @@ Transform:
   m_GameObject: {fileID: 8830564781441643859}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.2, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4766287207688848538}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4256479085691373895
+--- !u!135 &1986203157523141976
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8830564781441643859}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.73995227
+  m_Center: {x: 0, y: 0.44, z: 0.76075333}
+--- !u!114 &2143281628634908126
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,9 +64,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8830564781441643859}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ef6925f809809048b7d28deb9ed04df, type: 3}
+  m_Script: {fileID: 11500000, guid: 26dd5607905f79244b1653a21f51548d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weapon: {fileID: 11400000, guid: c3a35830bec80b941959c2f978d68abc, type: 2}
 --- !u!1001 &4766287207689305748
 PrefabInstance:
   m_ObjectHideFlags: 0
