@@ -1,3 +1,4 @@
+using RPG.Core;
 using UnityEngine;
 
 namespace RPG.Combat
@@ -12,21 +13,38 @@ namespace RPG.Combat
         [SerializeField] float weaponRange = 0f;
         [SerializeField] float timeBetweenAttacks = 1f;
         [SerializeField] bool isRightHanded = true;
+        [SerializeField] Projectile projectile = null;
 
         public void Spawn(Transform rightHandTransform, Transform leftHandTransform, Animator animator)
         {
             if(equippedWeaponPrefabs != null)
             {
-                Transform handTransform;
-                if(isRightHanded) handTransform = rightHandTransform;
-                else handTransform = leftHandTransform;
+                Transform handTransform = GetTransform(rightHandTransform, leftHandTransform);
 
-            Instantiate(equippedWeaponPrefabs, handTransform);
+                Instantiate(equippedWeaponPrefabs, handTransform);
             }
-            if(weaponAnimationOverride != null)
+            if (weaponAnimationOverride != null)
             {
             animator.runtimeAnimatorController = weaponAnimationOverride;
             }
+        }
+
+        private Transform GetTransform(Transform rightHandTransform, Transform leftHandTransform)
+        {
+            Transform handTransform;
+            if (isRightHanded) handTransform = rightHandTransform;
+            else handTransform = leftHandTransform;
+            return handTransform;
+        }
+
+        public bool HasProjectile()
+        {
+            return projectile != null;
+        }
+        public void LaunchProjectile(Transform rightHand, Transform leftHand, Health target)
+        {
+            Projectile projectileInstance = Instantiate(projectile, GetTransform(rightHand, leftHand).position, Quaternion.identity);
+            projectileInstance.SetTarget(target);
         }
         public float GetTimeBeweenAttack()
         {

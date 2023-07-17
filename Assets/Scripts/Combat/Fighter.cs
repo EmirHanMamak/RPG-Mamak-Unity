@@ -68,7 +68,18 @@ namespace RPG.Combat
         void Hit()
         {
             if(target == null) { return; }
+            if(currentWeapon.HasProjectile())
+            {
+                currentWeapon.LaunchProjectile(rightHandTransform, leftHandTransform, target);
+            }
+            else
+            {
             target.TakeDamage(currentWeapon.GetWeaponDamage());
+            }
+        }
+        void Shoot()
+        {
+            Hit();
         }
 
         private bool GetIsInRange()
