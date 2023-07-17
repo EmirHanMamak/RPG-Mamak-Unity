@@ -17,7 +17,7 @@ namespace RPG.Combat
 
         public void Spawn(Transform rightHandTransform, Transform leftHandTransform, Animator animator)
         {
-            if(equippedWeaponPrefabs != null)
+            if (equippedWeaponPrefabs != null)
             {
                 Transform handTransform = GetTransform(rightHandTransform, leftHandTransform);
 
@@ -25,15 +25,21 @@ namespace RPG.Combat
             }
             if (weaponAnimationOverride != null)
             {
-            animator.runtimeAnimatorController = weaponAnimationOverride;
+                animator.runtimeAnimatorController = weaponAnimationOverride;
             }
         }
 
         private Transform GetTransform(Transform rightHandTransform, Transform leftHandTransform)
         {
             Transform handTransform;
-            if (isRightHanded) handTransform = rightHandTransform;
-            else handTransform = leftHandTransform;
+            if (isRightHanded)
+            {
+                handTransform = rightHandTransform;
+            }
+            else
+            {
+                handTransform = leftHandTransform;
+            }
             return handTransform;
         }
 
@@ -44,7 +50,7 @@ namespace RPG.Combat
         public void LaunchProjectile(Transform rightHand, Transform leftHand, Health target)
         {
             Projectile projectileInstance = Instantiate(projectile, GetTransform(rightHand, leftHand).position, Quaternion.identity);
-            projectileInstance.SetTarget(target);
+            projectileInstance.SetTarget(target, weaponDamage);
         }
         public float GetTimeBeweenAttack()
         {
