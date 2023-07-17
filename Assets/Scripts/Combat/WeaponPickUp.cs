@@ -13,7 +13,7 @@ namespace RPG.Combat
         {
             if (other.gameObject.tag == "Player")
             {
-                Debug.Log("Girdi");
+                //Debug.Log("Girdi");
                 other.GetComponent<Fighter>().EquipWeapon(weapon);
                 Destroy(gameObject);
             }

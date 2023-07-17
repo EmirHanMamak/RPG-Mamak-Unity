@@ -85,6 +85,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 335844130443138963, guid: 8339e499a13b1a3469b024f1b2f0bf21, type: 3}
     - target: {fileID: 2889302891026399609, guid: d054c54d24f5f48408309ad0d297ca14, type: 3}
+      propertyPath: leftHandTransform
+      value: 
+      objectReference: {fileID: 4258599563286297491}
+    - target: {fileID: 2889302891026399609, guid: d054c54d24f5f48408309ad0d297ca14, type: 3}
+      propertyPath: rightHandTransform
+      value: 
+      objectReference: {fileID: 4258599563286354939}
+    - target: {fileID: 2889302891026399609, guid: d054c54d24f5f48408309ad0d297ca14, type: 3}
       propertyPath: weaponAnimationOverride
       value: 
       objectReference: {fileID: 22100000, guid: c3588619a05b8604691472088497e425, type: 2}
@@ -185,6 +193,11 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!4 &4258599563286297491 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3594603006723960582, guid: d054c54d24f5f48408309ad0d297ca14, type: 3}
+  m_PrefabInstance: {fileID: 791241410392429717}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4258599563286354939 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3594603006723886958, guid: d054c54d24f5f48408309ad0d297ca14, type: 3}
