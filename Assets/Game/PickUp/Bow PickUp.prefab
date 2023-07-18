@@ -74,6 +74,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1986203157523141976, guid: 79a007227fb2a2946ba2522079fe57fb, type: 3}
+      propertyPath: m_Radius
+      value: 0.8570909
+      objectReference: {fileID: 0}
+    - target: {fileID: 1986203157523141976, guid: 79a007227fb2a2946ba2522079fe57fb, type: 3}
+      propertyPath: m_Center.x
+      value: 0.84473556
+      objectReference: {fileID: 0}
+    - target: {fileID: 1986203157523141976, guid: 79a007227fb2a2946ba2522079fe57fb, type: 3}
+      propertyPath: m_Center.y
+      value: 0.4399997
+      objectReference: {fileID: 0}
+    - target: {fileID: 1986203157523141976, guid: 79a007227fb2a2946ba2522079fe57fb, type: 3}
+      propertyPath: m_Center.z
+      value: -0.10325956
+      objectReference: {fileID: 0}
     - target: {fileID: 2143281628634908126, guid: 79a007227fb2a2946ba2522079fe57fb, type: 3}
       propertyPath: weapon
       value: 
