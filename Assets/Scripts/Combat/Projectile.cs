@@ -7,12 +7,21 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     [SerializeField] float arrowSpeed = 100f;
+    [SerializeField] bool isHoimg = false;
     Health target = null;
     float damage = 0f;
+    void Start()
+    {
+        transform.LookAt(GetAimLocation());
+
+    }
     void Update()
     {
         if (target == null) return;
+        if(isHoimg && !target.IsDead())
+        {
         transform.LookAt(GetAimLocation());
+        }
         transform.Translate(Vector3.forward * Time.deltaTime * arrowSpeed);
     }
 
@@ -34,6 +43,7 @@ public class Projectile : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<Health>() != target) return;
+        if(target.IsDead()) return;
         target.TakeDamage(damage);
         Destroy(gameObject);
     }

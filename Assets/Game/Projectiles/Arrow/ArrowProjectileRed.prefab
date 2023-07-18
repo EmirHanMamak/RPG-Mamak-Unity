@@ -163,6 +163,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 692553776995329056, guid: a9842be7479dd4042bb53434c8be60b0, type: 3}
+      propertyPath: isHoimg
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 692553776995329056, guid: a9842be7479dd4042bb53434c8be60b0, type: 3}
       propertyPath: arrowSpeed
       value: 35
       objectReference: {fileID: 0}
@@ -173,6 +177,18 @@ PrefabInstance:
     - target: {fileID: 4839187252494651847, guid: a9842be7479dd4042bb53434c8be60b0, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4839187252494651847, guid: a9842be7479dd4042bb53434c8be60b0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4839187252494651847, guid: a9842be7479dd4042bb53434c8be60b0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4839187252494651847, guid: a9842be7479dd4042bb53434c8be60b0, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4839187252494651847, guid: a9842be7479dd4042bb53434c8be60b0, type: 3}
       propertyPath: m_LocalPosition.x
