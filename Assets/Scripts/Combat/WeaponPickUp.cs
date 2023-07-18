@@ -8,6 +8,12 @@ namespace RPG.Combat
     public class WeaponPickUp : MonoBehaviour
     {
         [SerializeField] Weapon weapon;
+        [SerializeField] float respawnSecondTime = 5f;
+        Collider pickUpCollider;
+        private void Start()
+        {
+            pickUpCollider = GetComponent<Collider>();
+        }
 
         private void OnTriggerEnter(Collider other)
         {
@@ -15,9 +21,31 @@ namespace RPG.Combat
             {
                 //Debug.Log("Girdi");
                 other.GetComponent<Fighter>().EquipWeapon(weapon);
-                Destroy(gameObject);
+                StartCoroutine(HideForSeconds(respawnSecondTime));
             }
-
         }
+        private IEnumerator HideForSeconds(float seconds)
+        {
+            HidePickUp();
+            yield return new WaitForSeconds(seconds);
+            ShowPickUp();
+        }
+        private void HidePickUp()
+        {
+            pickUpCollider.enabled = false;
+            foreach (Transform eachChild in transform)
+            {
+                eachChild.gameObject.SetActive(false);
+            }
+        }
+        private void ShowPickUp()
+        {
+            pickUpCollider.enabled = true;
+            foreach (Transform eachChild in transform)
+            {
+                eachChild.gameObject.SetActive(true);
+            }
+        }
+
     }
 }
