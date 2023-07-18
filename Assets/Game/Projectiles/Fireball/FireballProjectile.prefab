@@ -4933,6 +4933,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 828a2f4e1dddd954db1abd2bfffa91c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitEffect: {fileID: 2302457091093092515, guid: 69d1b1037536b504884c93bb73d662db, type: 3}
   arrowSpeed: 30
   isHoimg: 0
 --- !u!65 &3209105242013475498

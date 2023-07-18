@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    [SerializeField] GameObject hitEffect = null;
     [SerializeField] float arrowSpeed = 100f;
     [SerializeField] bool isHoimg = false;
     Health target = null;
@@ -18,9 +19,9 @@ public class Projectile : MonoBehaviour
     void Update()
     {
         if (target == null) return;
-        if(isHoimg && !target.IsDead())
+        if (isHoimg && !target.IsDead())
         {
-        transform.LookAt(GetAimLocation());
+            transform.LookAt(GetAimLocation());
         }
         transform.Translate(Vector3.forward * Time.deltaTime * arrowSpeed);
     }
@@ -43,7 +44,11 @@ public class Projectile : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<Health>() != target) return;
-        if(target.IsDead()) return;
+        if (target.IsDead()) return;
+        if(hitEffect != null)
+        {
+        Instantiate(hitEffect, GetAimLocation(), transform.rotation);
+        }
         target.TakeDamage(damage);
         Destroy(gameObject);
     }
