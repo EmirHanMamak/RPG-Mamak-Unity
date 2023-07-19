@@ -14,11 +14,13 @@ namespace RPG.Combat
         [SerializeField] bool isHoimg = false;
         Health target = null;
         float damage = 0f;
+
         void Start()
         {
             transform.LookAt(GetAimLocation());
 
         }
+
         void Update()
         {
             if (target == null) return;
@@ -29,22 +31,18 @@ namespace RPG.Combat
             transform.Translate(Vector3.forward * Time.deltaTime * speed);
         }
 
-        private Vector3 GetAimLocation()
-        {
-            CapsuleCollider capsuleCollider = target.GetComponent<CapsuleCollider>();
+        /**
+         * Other Functions
+         */
 
-            if (capsuleCollider == null)
-            {
-                return target.transform.position;
-            }
-            return target.transform.position + Vector3.up * capsuleCollider.height / 1.2f;
-        }
+        /*VOID FUNCTIONS*/
         public void SetTarget(Health target, float damage)
         {
             this.target = target;
             this.damage = damage;
             Destroy(gameObject, maxLifeTime);
         }
+
         private void OnTriggerEnter(Collider other)
         {
             if (other.GetComponent<Health>() != target) return;
@@ -58,6 +56,17 @@ namespace RPG.Combat
             Destroy(gameObject);
             //Destroy(hitEffect, 1f);
         }
-    }
+        
+        /*VECTOR3 FUNCTIONS*/
+        private Vector3 GetAimLocation()
+        {
+            CapsuleCollider capsuleCollider = target.GetComponent<CapsuleCollider>();
 
+            if (capsuleCollider == null)
+            {
+                return target.transform.position;
+            }
+            return target.transform.position + Vector3.up * capsuleCollider.height / 1.2f;
+        }
+    }
 }

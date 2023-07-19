@@ -7,6 +7,12 @@ namespace RPG.Core
     public class ActionScheduler : MonoBehaviour
     {
         IAction currentAction;
+
+        /**
+         * Other Functions
+         */
+         
+        /*VOID FUNCTIONS*/
         public void StartAction(IAction action)
         {
             if(currentAction == action) return;

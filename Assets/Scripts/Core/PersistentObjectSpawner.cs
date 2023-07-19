@@ -6,6 +6,7 @@ namespace RPG.Core
     {
         [SerializeField] GameObject persistentObjectPrefab;
         static bool hasSpawned = false;
+
         private void Awake()
         {
             if (hasSpawned) return;
@@ -13,6 +14,11 @@ namespace RPG.Core
             hasSpawned = true;
         }
 
+        /**
+         * Other Functions
+         */
+
+        /*VOID FUNCTIONS*/
         private void SpawnPresistentObjects()
         {
             GameObject persistentObject = Instantiate(persistentObjectPrefab);

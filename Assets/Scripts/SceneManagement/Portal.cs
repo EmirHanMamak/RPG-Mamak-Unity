@@ -7,17 +7,24 @@ namespace RPG.SceneManagement
 {
     public class Portal : MonoBehaviour
     {
+        
         enum DestinationIdentifier
         {
             A, B, C, D, E
         }
-        [SerializeField] int sceneToLoad = -1;
+
         [SerializeField] Transform spawnPoint;
         [SerializeField] DestinationIdentifier destinationIdentifier;
         [SerializeField] float fadeInTime = 0.5f;
         [SerializeField] float fadeOutTime = 0.2f;
         [SerializeField] float fadeWaitTime = 0.5f;
+        [SerializeField] int sceneToLoad = -1;
 
+        /**
+         * Other Functions
+         */
+
+        /*VOID FUNCTIONS*/
         private void OnTriggerEnter(Collider other)
         {
             if (other.tag == "Player")
@@ -26,6 +33,16 @@ namespace RPG.SceneManagement
             }
         }
 
+        private void UpdatePlayer(Portal otherPortal)
+        {
+            GameObject player = GameObject.FindWithTag("Player");
+            player.GetComponent<NavMeshAgent>().enabled = false;
+            player.GetComponent<NavMeshAgent>().Warp(otherPortal.spawnPoint.position);
+            player.transform.rotation = otherPortal.spawnPoint.rotation;
+            player.GetComponent<NavMeshAgent>().enabled = true;
+        }
+
+        /*IENUMERATOR FUNCTIONS*/
         private IEnumerator Transition()
         {
             if (sceneToLoad < 0)
@@ -47,18 +64,9 @@ namespace RPG.SceneManagement
             yield return new WaitForSeconds(fadeWaitTime);
             yield return fader.FadeIn(fadeInTime);
             Destroy(gameObject);
-
         }
 
-        private void UpdatePlayer(Portal otherPortal)
-        {
-            GameObject player = GameObject.FindWithTag("Player");
-            player.GetComponent<NavMeshAgent>().enabled = false;
-            player.GetComponent<NavMeshAgent>().Warp(otherPortal.spawnPoint.position);
-            player.transform.rotation = otherPortal.spawnPoint.rotation;
-            player.GetComponent<NavMeshAgent>().enabled = true;
-        }
-
+        /*PORTAL FUNCTIONS*/
         private Portal GetOtherPortal()
         {
             foreach (Portal portal in FindObjectsOfType<Portal>())
@@ -67,7 +75,6 @@ namespace RPG.SceneManagement
                 if (portal.destinationIdentifier != destinationIdentifier) continue;
                 return portal;
             }
-
             return null;
         }
     }

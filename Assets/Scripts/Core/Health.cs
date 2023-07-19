@@ -7,6 +7,16 @@ namespace RPG.Core
     {
         [SerializeField] float healthPoints;
         bool isDead = false;
+
+        private void Start()
+        {
+        }
+
+        /**
+         * Other Functions
+         */
+
+        /*VOID FUNCTIONS*/
         public void TakeDamage(float damage)
         {
             healthPoints = Mathf.Max(healthPoints - damage, 0);
@@ -15,10 +25,6 @@ namespace RPG.Core
                 Die();
             }
             print(healthPoints);
-        }
-        public bool IsDead()
-        {
-            return isDead;
         }
 
         private void Die()
@@ -29,11 +35,6 @@ namespace RPG.Core
             GetComponent<ActionScheduler>().CancelCurrentAction();
         }
 
-        public object CaptureState()
-        {
-            return healthPoints;
-        }
-
         public void RestoreState(object state)
         {
             healthPoints = (float)state;
@@ -41,6 +42,18 @@ namespace RPG.Core
             {
                 Die();
             }
+        }
+
+        /*BOOL FUNCTIONS*/
+        public bool IsDead()
+        {
+            return isDead;
+        }
+
+        /*OBJECT FUNCTIONS*/
+        public object CaptureState()
+        {
+            return healthPoints;
         }
     }
 }

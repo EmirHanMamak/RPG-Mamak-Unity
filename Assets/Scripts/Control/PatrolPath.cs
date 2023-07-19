@@ -2,12 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 namespace RPG.Control
 {
     public class PatrolPath : MonoBehaviour
     {
         const float wayPointGizmosRadius = 0.4f;
+
+        /**
+         * Other Functions
+         */
+
+        /*VOID FUNCTIONS*/
         private void OnDrawGizmos()
         {
             for (int i = 0; i < transform.childCount; i++)
@@ -16,13 +21,15 @@ namespace RPG.Control
                 Gizmos.DrawSphere(GetWayPoint(i), wayPointGizmosRadius);
                 Gizmos.DrawLine(GetWayPoint(i), GetWayPoint(j));
             }
-
         }
 
+        /*VECTOR3 FUNCTIONS*/
         public Vector3 GetWayPoint(int i)
         {
             return transform.GetChild(i).position;
         }
+
+        /*INT FUNCTIONS*/
         public int GetNextIndex(int i)
         {
             if (i + 1 == transform.childCount)
@@ -32,5 +39,4 @@ namespace RPG.Control
             return i + 1;
         }
     }
-
 }

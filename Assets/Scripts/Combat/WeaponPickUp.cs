@@ -10,11 +10,17 @@ namespace RPG.Combat
         [SerializeField] Weapon weapon;
         [SerializeField] float respawnSecondTime = 5f;
         Collider pickUpCollider;
+
         private void Start()
         {
             pickUpCollider = GetComponent<Collider>();
         }
 
+        /**
+         * Other Functions
+         */
+
+        /*VOID FUNCTIONS*/
         private void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.tag == "Player")
@@ -24,12 +30,7 @@ namespace RPG.Combat
                 StartCoroutine(HideForSeconds(respawnSecondTime));
             }
         }
-        private IEnumerator HideForSeconds(float seconds)
-        {
-            HidePickUp();
-            yield return new WaitForSeconds(seconds);
-            ShowPickUp();
-        }
+
         private void HidePickUp()
         {
             pickUpCollider.enabled = false;
@@ -38,6 +39,7 @@ namespace RPG.Combat
                 eachChild.gameObject.SetActive(false);
             }
         }
+
         private void ShowPickUp()
         {
             pickUpCollider.enabled = true;
@@ -46,6 +48,13 @@ namespace RPG.Combat
                 eachChild.gameObject.SetActive(true);
             }
         }
-
+        
+        /*IEnumerator FUNCTIONS*/
+        private IEnumerator HideForSeconds(float seconds)
+        {
+            HidePickUp();
+            yield return new WaitForSeconds(seconds);
+            ShowPickUp();
+        }
     }
 }
