@@ -18,7 +18,7 @@ namespace RPG.Stats
         /*VOID FUNCTIONS*/
         public float GetHealth()
         {
-            return 0;
+            return progression.GetHealth(characterClass, startingLevel);
         }
     }
-}
+} 

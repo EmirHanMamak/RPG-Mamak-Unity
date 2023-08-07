@@ -1,11 +1,9 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using RPG.Combat;
 using RPG.Core;
 using RPG.Movment;
 using UnityEngine;
-
+using RPG.Resources;
 namespace RPG.Control
 {
     public class AIController : MonoBehaviour
