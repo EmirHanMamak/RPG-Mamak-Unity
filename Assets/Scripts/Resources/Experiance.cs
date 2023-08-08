@@ -17,7 +17,7 @@ namespace RPG.Resources
         }
 
         public void RestoreState(object state)
-        {
+        {   
             experiancePoint = (float)state;
         }
     }
