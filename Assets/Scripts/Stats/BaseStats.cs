@@ -16,14 +16,9 @@ namespace RPG.Stats
          */
 
         /*VOID FUNCTIONS*/
-        public float GetHealth()
+        public float GetStat(Stat stat)
         {
-            return progression.GetHealth(characterClass, startingLevel);
-        }
-
-        public float GetExperianceReward()
-        {
-            return 10;
+            return progression.GetStat(stat, characterClass, startingLevel);
         }
     }
 } 
