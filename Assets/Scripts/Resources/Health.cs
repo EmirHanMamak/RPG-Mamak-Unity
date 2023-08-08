@@ -1,3 +1,4 @@
+using System;
 using RPG.Core;
 using RPG.Saving;
 using RPG.Stats;
@@ -20,21 +21,26 @@ namespace RPG.Resources
          */
 
         /*VOID FUNCTIONS*/
-        public void TakeDamage(float damage)
+        public void TakeDamage(GameObject instigator, float damage)
         {
             healthPoints = Mathf.Max(healthPoints - damage, 0);
             if (healthPoints == 0)
             {
                 Die();
+                AwardExperiance(instigator);
             }
             print(healthPoints);
         }
-
         public float GetPercentage()
         {
             return 100 * (healthPoints / GetComponent<BaseStats>().GetHealth());
         }
-
+        private void AwardExperiance(GameObject instigator)
+        {
+            Experiance experiance = instigator.GetComponent<Experiance>();
+            if(experiance == null) return;
+            experiance.GainExperiance(GetComponent<BaseStats>().GetExperianceReward());
+        }
         private void Die()
         {
             if (isDead) return;
