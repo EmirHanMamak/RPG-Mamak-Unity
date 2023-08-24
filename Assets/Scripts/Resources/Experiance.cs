@@ -11,13 +11,17 @@ namespace RPG.Resources
             experiancePoint += experiance;
         }
 
+        public float GetExperiancePoint()
+        {
+            return experiancePoint;
+        }
         public object CaptureState()
         {
             return experiancePoint;
         }
 
         public void RestoreState(object state)
-        {   
+        {
             experiancePoint = (float)state;
         }
     }
