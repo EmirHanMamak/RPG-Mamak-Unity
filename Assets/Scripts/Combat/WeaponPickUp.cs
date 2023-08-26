@@ -1,10 +1,11 @@
 using System;
 using System.Collections;
+using RPG.Control;
 using UnityEngine;
 
 namespace RPG.Combat
 {
-    public class WeaponPickUp : MonoBehaviour
+    public class WeaponPickUp : MonoBehaviour, IRaycastable
     {
         [SerializeField] Weapon weapon;
         [SerializeField] float respawnSecondTime = 5f;
@@ -25,9 +26,14 @@ namespace RPG.Combat
             if (other.gameObject.tag == "Player")
             {
                 //Debug.Log("Girdi");
-                other.GetComponent<Fighter>().EquipWeapon(weapon);
-                StartCoroutine(HideForSeconds(respawnSecondTime));
+                Pickup(other.GetComponent<Fighter>());
             }
+        }
+
+        private void Pickup(Fighter fighter)
+        {
+            fighter.EquipWeapon(weapon);
+            StartCoroutine(HideForSeconds(respawnSecondTime));
         }
 
         private void HidePickUp()
@@ -54,6 +60,15 @@ namespace RPG.Combat
             HidePickUp();
             yield return new WaitForSeconds(seconds);
             ShowPickUp();
+        }
+
+        public bool HandleRaycast(PlayerController callingController)
+        {
+            if(Input.GetMouseButtonDown(0))
+            {
+            Pickup(callingController.GetComponent<Fighter>());
+            }
+            return true;
         }
     }
 }
