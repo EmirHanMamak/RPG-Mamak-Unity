@@ -5,6 +5,7 @@ using RPG.Resources;
 using System;
 using Unity.VisualScripting;
 using UnityEngine.EventSystems;
+using UnityEngine.UIElements;
 
 namespace RPG.Control
 {
@@ -55,7 +56,7 @@ namespace RPG.Control
 
         private bool InteractWithComponent()
         {
-            RaycastHit[] hits = Physics.RaycastAll(GetMouseRay());
+            RaycastHit[] hits = RaycastAllSorthed();
             foreach (RaycastHit hit in hits)
             {
                 IRaycastable[] raycastables = hit.transform.GetComponents<IRaycastable>();
@@ -69,6 +70,18 @@ namespace RPG.Control
                 }
             }
             return false;
+        }
+
+        RaycastHit[] RaycastAllSorthed()
+        {
+            RaycastHit[] hits = Physics.RaycastAll(GetMouseRay());
+            float[] distances = new float[hits.Length];
+            for (int i = 0; i < hits.Length; i++)
+            {
+                distances[i] = hits[i].distance;
+            }
+            Array.Sort(distances, hits);
+            return hits;
         }
 
         private bool InteractWithMovement()
@@ -90,7 +103,7 @@ namespace RPG.Control
         private void SetCursor(CursorType type)
         {
             CursorMapping mapping = GetCursorMapping(type);
-            Cursor.SetCursor(mapping.texture, mapping.hotspot, CursorMode.Auto);
+            UnityEngine.Cursor.SetCursor(mapping.texture, mapping.hotspot, CursorMode.Auto);
         }
 
         private CursorMapping GetCursorMapping(CursorType type)
