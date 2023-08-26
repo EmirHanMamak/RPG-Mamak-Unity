@@ -27,7 +27,7 @@ namespace RPG.Resources
             if (healthPoints == 0)
             {
                 Die();
-                AwardExperiance(instigator);
+                AwardExperience(instigator);
             }
             print(healthPoints);
         }
@@ -35,11 +35,12 @@ namespace RPG.Resources
         {
             return 100 * (healthPoints / GetComponent<BaseStats>().GetStat(Stat.Health));
         }
-        private void AwardExperiance(GameObject instigator)
+        private void AwardExperience(GameObject instigator)
         {
-            Experiance experiance = instigator.GetComponent<Experiance>();
-            if(experiance == null) return;
-            experiance.GainExperiance(GetComponent<BaseStats>().GetStat(Stat.ExperianceReward));
+            Experiance experience = instigator.GetComponent<Experiance>();
+            if (experience == null) return;
+
+            experience.GainExperiance(GetComponent<BaseStats>().GetStat(Stat.ExperianceReward));
         }
         private void Die()
         {
